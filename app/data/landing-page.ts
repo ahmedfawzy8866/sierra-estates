@@ -193,6 +193,7 @@ export const STATIC_PORTFOLIO_ASSETS = [
   { id: 4, title: 'Emirates Crown', titleAr: 'إيمارتس كراون', location: 'Fifth Settlement · Cairo', locationAr: 'التجمع الخامس · القاهرة', price: 22000000, beds: 6, baths: 5, sqft: '650 m²', badge: 'Off Market', badgeColor: '#059669', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80' },
   { id: 5, title: 'Palm Residences', titleAr: 'بالم ريزيدنسز', location: 'Madinaty · Block 7', locationAr: 'مدينتي · بلوك ٧', price: 5900000, beds: 3, baths: 3, sqft: '240 m²', badge: 'High ROI', badgeColor: '#DC2626', img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80' },
   { id: 6, title: 'Sky Tower Penthouse', titleAr: 'بنتهاوس سكاي تاور', location: 'Downtown New Cairo', locationAr: 'وسط القاهرة الجديدة', price: 11500000, beds: 4, baths: 4, sqft: '380 m²', badge: 'Price Reduced', badgeColor: '#D97706', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80' },
+  { id: 7, title: 'Modern Oasis', titleAr: 'الواحة الحديثة', location: 'Hyde Park · New Cairo', locationAr: 'هايد بارك · القاهرة الجديدة', price: 9200000, beds: 4, baths: 3, sqft: '300 m²', badge: 'Exclusive', badgeColor: '#2563EB', img: 'https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=700&q=80' }
 ];
 
 // Removed ZONE_COORDS in favor of inline zone coordinates in COPY
