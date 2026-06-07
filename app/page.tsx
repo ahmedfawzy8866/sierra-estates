@@ -50,9 +50,9 @@ const THEMES = {
 const COPY = {
   en: {
     dir: 'ltr' as const,
-    brand: 'SIERRA BLU', sub: 'REALTY',
-    tagline: 'SIERRA-BLU REALTY | BEYOND BROKERAGE',
-    nav: ['Properties', 'Intelligence', 'Virtual Tour', 'Careers', 'Contact'],
+    brand: 'SIERRA ESTATES', sub: 'REALTY',
+    tagline: 'SIERRA ESTATES REALTY | BEYOND BROKERAGE',
+    nav: ['Properties', 'Intelligence', 'ROI Calculator', 'Virtual Tour', 'Careers', 'Contact'],
     cta: 'Enter Portal',
     heroTag: 'Beyond Brokerage',
     heroH1: ['New Cairo’s first dedicated SaaS platform', 'for Rent and Resale.'],
@@ -68,8 +68,8 @@ const COPY = {
     viewAll: 'View All →',
     searchType: 'Property Type', searchCompound: 'Compound', searchBudget: 'Budget', searchBtn: 'Search',
     beds: 'bed', baths: 'bath',
-    secWhy: 'Why Sierra Blu',
-    h2Why: 'The Sierra Blu Standard',
+    secWhy: 'Why Sierra Estates',
+    h2Why: 'The Sierra Estates Standard',
     why: [
       { icon: '◆', title: 'Curated by Hand', desc: 'Each listing personally reviewed by senior advisors. No noise, no overpricing — only properties that meet our exacting standard.' },
       { icon: '◈', title: 'Grounded in Data', desc: 'AI-driven ROI modelling, live market comparisons, and growth corridor analysis. Conviction backed by evidence.' },
@@ -114,14 +114,14 @@ const COPY = {
     footNav: 'Navigation', footNavLinks: ['Properties', 'Intelligence', 'About Us', 'Careers', 'Contact'],
     footMarkets: 'Markets', footMarketLinks: ['New Cairo', 'Fifth Settlement', 'Madinaty', 'Mostakbal City', 'Mountain View'],
     footContact: 'Contact',
-    copyright: '© 2026 Sierra Blu Realty. All rights reserved.',
+    copyright: '© 2026 Sierra Estates Realty. All rights reserved.',
     legal: ['Privacy Policy', 'Terms of Service', 'Cookies'],
   },
   ar: {
     dir: 'rtl' as const,
-    brand: 'سييرا بلو', sub: 'للعقارات',
+    brand: 'سييرا إستيتس', sub: 'للعقارات',
     tagline: 'استشارات عقارية مدعومة بالذكاء الاصطناعي',
-    nav: ['العقارات', 'الذكاء', 'جولة افتراضية', 'الوظائف', 'اتصل'],
+    nav: ['العقارات', 'الذكاء', 'حاسبة العائد', 'جولة افتراضية', 'الوظائف', 'اتصل'],
     cta: 'الدخول للبوابة',
     heroTag: 'أبعد من الوساطة',
     heroH1: ['قرارات', 'أرقى.'],
@@ -183,7 +183,7 @@ const COPY = {
     footNav: 'روابط التنقل', footNavLinks: ['العقارات', 'الذكاء', 'عنّا', 'الوظائف', 'اتصل'],
     footMarkets: 'الأسواق', footMarketLinks: ['القاهرة الجديدة', 'التجمع الخامس', 'مدينتي', 'مستقبل سيتي', 'ماونتن فيو'],
     footContact: 'تواصل معنا',
-    copyright: '© ٢٠٢٦ سييرا بلو للعقارات. جميع الحقوق محفوظة.',
+    copyright: '© ٢٠٢٦ سييرا إستيتس للعقارات. جميع الحقوق محفوظة.',
     legal: ['سياسة الخصوصية', 'شروط الخدمة', 'ملفات الارتباط'],
   },
 };
@@ -302,11 +302,12 @@ export default function LandingPage() {
         <div className="hidden md:flex" style={{ gap: 32, alignItems: 'center' }}>
           {T.nav.map((n) => {
             const isCareers = n === 'Careers' || n === 'الوظائف';
-            const isVirtualTour = n === 'Virtual Tour' || n === 'جولة افتراضية';
+             const isVirtualTour = n === 'Virtual Tour' || n === 'جولة افتراضية';
+            const isRoi = n === 'ROI Calculator' || n === 'حاسبة العائد';
             
-            if (isVirtualTour) {
+            if (isVirtualTour || isRoi) {
               return (
-                <Link key={n} href="/virtual-tour" className="hover:text-secondary transition-colors cursor-pointer" style={{ textDecoration: 'none', fontSize: 11, fontWeight: 500, letterSpacing: '.13em', textTransform: 'uppercase', color: th.textSub, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>
+                <Link key={n} href={isVirtualTour ? "/virtual-tour" : "/roi"} className="hover:text-secondary transition-colors cursor-pointer" style={{ textDecoration: 'none', fontSize: 11, fontWeight: 500, letterSpacing: '.13em', textTransform: 'uppercase', color: th.textSub, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>
                   {n}
                 </Link>
               );
@@ -538,7 +539,7 @@ export default function LandingPage() {
             <div className="reveal h-[480px]" style={{ order: isAr ? 1 : 2 }}>
               <div className="relative h-full rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(233,193,118,0.22)', boxShadow: '0 32px 80px rgba(0,0,0,.4)' }}>
                 <LiveMap mode={mode} />
-                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-[1000] pointer-events-none" style={{ fontSize: 8, letterSpacing: '4px', color: 'rgba(233,193,118,0.35)', fontFamily: "'Jost', sans-serif", whiteSpace: 'nowrap' }}>SIERRA BLU INTELLIGENCE</div>
+                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-[1000] pointer-events-none" style={{ fontSize: 8, letterSpacing: '4px', color: 'rgba(233,193,118,0.35)', fontFamily: "'Jost', sans-serif", whiteSpace: 'nowrap' }}>SIERRA ESTATES INTELLIGENCE</div>
               </div>
             </div>
           </div>
